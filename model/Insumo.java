@@ -34,6 +34,11 @@ public class Insumo extends Alimento {
         this.quantidade += quantidade;
     }
 
+    // SOBRESCRITA DO MÉTODO aumentarQuantidade(int)
+    public void aumentarQuantidade() {
+        this.quantidade += 1;
+    }
+
     public void diminuirQuantidade(int quantidade) throws InsumoException{
         if (quantidade < 0) {
             throw new InsumoException("Quantidade negativa não é válida");

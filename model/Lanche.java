@@ -24,17 +24,19 @@ public class Lanche {
 
         if (insumos.size() == 0) {
             insumos.add(insumo);
-
+            incrementaPreco(insumo.getPrecoTotal());
         } else {
             Insumo insumoEncontrado = procurarInsumoPorNome(insumo.nome);
             if (insumoEncontrado != null) {
                 try {
                     insumoEncontrado.aumentarQuantidade(insumo.getQuantidade());
+                    incrementaPreco(insumo.getPrecoTotal());
                 } catch (InsumoException e) {
                     System.out.println("Houve um erro: " + e.getMessage());
                 }
             } else {
                 insumos.add(insumo);
+                incrementaPreco(insumo.getPrecoTotal());
             }
         }
     }
@@ -47,16 +49,14 @@ public class Lanche {
                 return insumo;
             }
         }
-        
         return null;
     }
 
-    public void atualizaPreco() {
-        double precoFinal = 0;
-
-        for (Insumo insumo : insumos) {
-            
+    public void incrementaPreco(double preco) throws LancheException{
+        if (preco < 0) {
+            throw new LancheException("Preço não pode ser menor que zero");
         }
+        this.preco += preco;
     }
 
     public void removerInsumo(Insumo insumo) throws LancheException {
