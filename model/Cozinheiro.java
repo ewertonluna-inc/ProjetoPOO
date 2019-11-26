@@ -3,8 +3,8 @@ package model;
 public class Cozinheiro extends Funcionario {
     // Pedido pedidoAtual;
 
-    Cozinheiro(String nome, String cpf, byte idade, String empresa, byte tempoDeExperiencia) {
-        super(nome, cpf, idade, empresa, tempoDeExperiencia);
+    public Cozinheiro(String nome, String cpf, String empresa, byte tempoDeExperiencia) {
+        super(nome, cpf, empresa, tempoDeExperiencia);
         // TODO Auto-generated constructor stub
     }
 
@@ -14,6 +14,4 @@ public class Cozinheiro extends Funcionario {
         return 0;
     }
 
-    // concluirPedido();
-    
 }

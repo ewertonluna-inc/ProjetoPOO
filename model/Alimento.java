@@ -8,4 +8,15 @@ abstract public class Alimento {
         this.nome = nome;
         this.calorias = calorias;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getCalorias() {
+        return calorias;
+    }
+
+    
+
 }

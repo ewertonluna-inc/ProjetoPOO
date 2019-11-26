@@ -2,8 +2,8 @@ package model;
 
 public class Balconista extends Funcionario{
 
-    public Balconista(String nome, String cpf, byte idade, String empresa, byte tempoDeExperiencia) {
-        super(nome, cpf, idade, empresa, tempoDeExperiencia);
+    public Balconista(String nome, String cpf, String empresa, byte tempoDeExperiencia) {
+        super(nome, cpf, empresa, tempoDeExperiencia);
     }
 
     @Override

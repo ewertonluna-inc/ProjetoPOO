@@ -7,8 +7,8 @@ public class Gerente extends Funcionario {
     // private List<Solicitacao> solicitacoes = new ArrayList<Solicitacao>;
 
 
-    Gerente(String nome, String cpf, byte idade, String empresa, byte tempoDeExperiencia) {
-        super(nome, cpf, idade, empresa, tempoDeExperiencia);
+    Gerente(String nome, String cpf, String empresa, byte tempoDeExperiencia) {
+        super(nome, cpf, empresa, tempoDeExperiencia);
     }
 
     public void resolverSolicitaçao() {
