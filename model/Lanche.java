@@ -1,6 +1,5 @@
 package model;
 
-import exception.InsumoException;
 import exception.LancheException;
 import java.util.List;
 import java.util.ArrayList;
