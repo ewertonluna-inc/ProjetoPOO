@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Gerente extends Funcionario {
-    // private List<Solicitacao> solicitacoes = new ArrayList<Solicitacao>;
+    // Solicitacao solicitacao;
 
 
     Gerente(String nome, String cpf, String empresa, byte tempoDeExperiencia) {
