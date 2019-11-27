@@ -28,4 +28,12 @@ abstract public class Funcionario extends Pessoa{
     public double getSalario() {
         return salario;
     }
+
+    @Override
+    public String toString() {
+        return "Funcionario [empresa=" + empresa + ", salario=" + salario + ", tempoDeExperiencia=" + tempoDeExperiencia
+                + "]";
+    }
+
+    
 }
