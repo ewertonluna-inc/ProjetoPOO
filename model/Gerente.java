@@ -4,6 +4,8 @@ import exception.GerenteException;
 
 public class Gerente extends Funcionario {
     private Solicitacao solicitacao;
+    public static final double SALARIO_INICIAL = 6000;
+    public static final double TAXA_DE_AUMENTO_ANUAL = 1.17;
 
 
     public Gerente(String nome, String cpf, String empresa, byte tempoDeExperiencia) {
@@ -39,20 +41,21 @@ public class Gerente extends Funcionario {
         return this.solicitacao;
     }
 
-    @Override
-    public double calculaSalario(byte tempoDeExperiencia) {
-        
-        return 0;
-    }
 
     @Override
     public String toString() {
         return super.toString() + " Gerente [solicitacao=" + solicitacao + "]";
     }
 
-     
-
-    
-    
+    @Override
+    public double getSalario() {
+        double tempoDeExperiencia = getTempoDeExperiencia();
+        
+        if (tempoDeExperiencia == 0) {
+            return SALARIO_INICIAL;
+        }
+        
+        return Math.pow(TAXA_DE_AUMENTO_ANUAL, tempoDeExperiencia) * SALARIO_INICIAL;
+    }
 }
 

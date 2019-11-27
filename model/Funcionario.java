@@ -1,9 +1,10 @@
 package model;
 
+import exception.FuncionarioException;
+
 abstract public class Funcionario extends Pessoa{
     private String empresa;
     private byte tempoDeExperiencia;
-    private double salario;
 
     Funcionario(String nome, String cpf,  
                 String empresa, byte tempoDeExperiencia) {
@@ -11,12 +12,9 @@ abstract public class Funcionario extends Pessoa{
         super(nome, cpf);
         this.empresa = empresa;
         this.tempoDeExperiencia = tempoDeExperiencia;
-        this.salario = calculaSalario(tempoDeExperiencia);
-                }
+    }
 
-    
-    
-    abstract public double calculaSalario(byte tempoDeExperiencia);
+    abstract public double getSalario();
 
     public String getEmpresa() {
         return empresa;
@@ -26,13 +24,20 @@ abstract public class Funcionario extends Pessoa{
         return tempoDeExperiencia;
     }
 
-    public double getSalario() {
-        return salario;
+    public void incrementarTempoDeExperiencia() {
+        tempoDeExperiencia += 1;
+    }
+
+    public void decrementarTempoDeExperiencia() throws FuncionarioException {
+        if (tempoDeExperiencia == 0) {
+            throw new FuncionarioException("O tempo de experiência não pode ser menor que zero");
+        }
+        tempoDeExperiencia -= 1;
     }
 
     @Override
     public String toString() {
-        return "Funcionario [empresa=" + empresa + ", salario=" + salario + ", tempoDeExperiencia=" + tempoDeExperiencia
+        return "Funcionario [empresa=" + empresa +  ", tempoDeExperiencia=" + tempoDeExperiencia
                 + "]";
     }
 
