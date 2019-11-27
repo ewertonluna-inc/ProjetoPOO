@@ -28,12 +28,8 @@ public class Lanche {
         } else {
             Insumo insumoEncontrado = procurarInsumoPorNome(insumo.getNome());
             if (insumoEncontrado != null) {
-                try {
                     insumoEncontrado.aumentarQuantidade(insumo.getQuantidade());
                     incrementaPreco(insumo.getPrecoTotal());
-                } catch (InsumoException e) {
-                    System.out.println("Houve um erro: " + e.getMessage());
-                }
             } else {
                 insumos.add(insumo);
                 incrementaPreco(insumo.getPrecoTotal());
