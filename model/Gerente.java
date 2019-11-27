@@ -1,8 +1,6 @@
 package model;
 
 import exception.GerenteException;
-import java.util.List;
-import java.util.ArrayList;
 
 public class Gerente extends Funcionario {
     private Solicitacao solicitacao;
