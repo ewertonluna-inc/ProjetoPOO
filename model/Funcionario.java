@@ -7,10 +7,11 @@ abstract public class Funcionario extends Pessoa{
 
     Funcionario(String nome, String cpf,  
                 String empresa, byte tempoDeExperiencia) {
-                    super(nome, cpf);
-                    this.empresa = empresa;
-                    this.tempoDeExperiencia = tempoDeExperiencia;
-                    this.salario = calculaSalario(tempoDeExperiencia);
+        
+        super(nome, cpf);
+        this.empresa = empresa;
+        this.tempoDeExperiencia = tempoDeExperiencia;
+        this.salario = calculaSalario(tempoDeExperiencia);
                 }
 
     
