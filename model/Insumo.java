@@ -27,9 +27,9 @@ public class Insumo extends Alimento {
         return quantidade * precoIndividual;
     }
 
-    public void aumentarQuantidade(int quantidade) throws InsumoException{
+    public void aumentarQuantidade(int quantidade){
         if (quantidade < 0) {
-            throw new InsumoException("Quantidade negativa não é válida");
+            throw new IllegalArgumentException("Quantidade negativa não é válida");
         }
         this.quantidade += quantidade;
     }
@@ -41,7 +41,7 @@ public class Insumo extends Alimento {
 
     public void diminuirQuantidade(int quantidade) throws InsumoException{
         if (quantidade < 0) {
-            throw new InsumoException("Quantidade negativa não é válida");
+            throw new IllegalArgumentException("Quantidade negativa não é válida");
         }
         if (this.quantidade - quantidade < 0) {
             throw new InsumoException("Estoque mínimo não pode ser menor do que zero");
