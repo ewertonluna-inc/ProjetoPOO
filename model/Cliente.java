@@ -7,8 +7,4 @@ public class Cliente extends Pessoa {
         super(nome, cpf);
     }
     
-    public String toString() {
-        String nome = this.getNome();
-        return "O nome do cliente é: " + nome;
-    }
 }

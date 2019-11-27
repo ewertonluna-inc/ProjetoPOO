@@ -51,7 +51,7 @@ public class Insumo extends Alimento {
 
     @Override
     public String toString() {
-        return "Insumo [nome=" + nome + ", calorias=" + calorias + ", preco=" + precoIndividual + ", quantidade=" + quantidade + "]";
+        return "Insumo [nome=" + getNome() + ", calorias=" + getCalorias() + ", preco=" + precoIndividual + ", quantidade=" + quantidade + "]";
     }
 
 }

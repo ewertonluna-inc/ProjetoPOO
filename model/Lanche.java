@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Lanche {
-    String nome;
-    List<Insumo> insumos;
-    double preco;
+    private String nome;
+    private List<Insumo> insumos;
+    private double preco;
 
     public Lanche(String nome) {
         this.nome = nome;
@@ -26,7 +26,7 @@ public class Lanche {
             insumos.add(insumo);
             incrementaPreco(insumo.getPrecoTotal());
         } else {
-            Insumo insumoEncontrado = procurarInsumoPorNome(insumo.nome);
+            Insumo insumoEncontrado = procurarInsumoPorNome(insumo.getNome());
             if (insumoEncontrado != null) {
                 try {
                     insumoEncontrado.aumentarQuantidade(insumo.getQuantidade());
@@ -60,22 +60,23 @@ public class Lanche {
     }
 
     public void removerInsumo(Insumo insumo) throws LancheException {
-        if (insumo == null) {
-            throw new LancheException("null não é um argumento válido");
-        }
+        // TODO: Concluir essa função
+        // if (insumo == null) {
+        //     throw new LancheException("null não é um argumento válido");
+        // }
 
-        for (Insumo item : insumos) {
-            if (item != null && item.getNome().equals(insumo.getNome())){
-                try {
-                    item.aumentarQuantidade(insumo.getQuantidade());
-                } catch (InsumoException e) {
-                    System.out.println("Houve um erro: " + e.getMessage());
-                }
+        // for (Insumo item : insumos) {
+        //     if (item != null && item.getNome().equals(insumo.getNome())){
+        //         try {
+        //             item.aumentarQuantidade(insumo.getQuantidade());
+        //         } catch (InsumoException e) {
+        //             System.out.println("Houve um erro: " + e.getMessage());
+        //         }
                 
-            } else {
-                insumos.add(insumo);
-            }
-        }
+        //     } else {
+        //         insumos.add(insumo);
+        //     }
+        // }
 
     }
 
