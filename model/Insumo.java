@@ -6,8 +6,8 @@ public class Insumo extends Alimento {
     private double precoIndividual;
     private int quantidade;
 
-    public Insumo(String nome, double calorias, double precoIndividual, int quantidade) {
-        super(nome, calorias);
+    public Insumo(String nome, double caloriasIndividual, double precoIndividual, int quantidade) {
+        super(nome, caloriasIndividual);
         if (quantidade < 0) {
             throw new IllegalArgumentException("Argumento não válido");
         }
@@ -27,9 +27,8 @@ public class Insumo extends Alimento {
         return quantidade * precoIndividual;
     }
 
-    @Override
-    public double getCalorias(){
-        return super.getCalorias() * quantidade;
+    public double getCaloriasTotal(){
+        return getCaloriasIndividual() * quantidade;
     }
 
     public void aumentarQuantidade(int quantidade){
@@ -39,7 +38,6 @@ public class Insumo extends Alimento {
         this.quantidade += quantidade;
     }
 
-    // SOBRECARGA DO MÉTODO aumentarQuantidade(int)
     public void aumentarQuantidade() {
         this.quantidade += 1;
     }
@@ -54,9 +52,16 @@ public class Insumo extends Alimento {
         this.quantidade -= quantidade;        
     }
 
+    public void diminuirQuantidade() throws InsumoException{
+        if (this.quantidade - 1 < 0) {
+            throw new InsumoException("Quantidade mínima de insumo não pode ser menor do que zero");
+        }
+        this.quantidade -= 1;
+    }
+
     @Override
     public String toString() {
-        return "Insumo [nome=" + getNome() + ", calorias=" + getCalorias() + ", preco=" + precoIndividual + ", quantidade=" + quantidade + "]";
+        return "Insumo [nome=" + getNome() + ", caloriasIndividual=" + getCaloriasIndividual() + ", precoIndividual=" + precoIndividual + ", quantidade=" + quantidade + "]";
     }
 
 }

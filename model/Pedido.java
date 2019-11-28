@@ -42,6 +42,12 @@ public class Pedido {
         return resumo;
     }
 
+    @Override
+    public String toString() {
+        return "Pedido [cliente=" + cliente + ", isPronto=" + isPronto + ", lanche=" + lanche + ", paraViagem="
+                + paraViagem + ", preco=" + preco + "]";
+    }
+
 
 
 
