@@ -27,6 +27,11 @@ public class Insumo extends Alimento {
         return quantidade * precoIndividual;
     }
 
+    @Override
+    public double getCalorias(){
+        return super.getCalorias() * quantidade;
+    }
+
     public void aumentarQuantidade(int quantidade){
         if (quantidade < 0) {
             throw new IllegalArgumentException("Quantidade negativa não é válida");
@@ -34,7 +39,7 @@ public class Insumo extends Alimento {
         this.quantidade += quantidade;
     }
 
-    // SOBRESCRITA DO MÉTODO aumentarQuantidade(int)
+    // SOBRECARGA DO MÉTODO aumentarQuantidade(int)
     public void aumentarQuantidade() {
         this.quantidade += 1;
     }
