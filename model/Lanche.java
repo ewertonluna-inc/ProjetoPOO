@@ -74,6 +74,15 @@ public class Lanche {
         // }
     }
 
+    public double getCalorias() {
+        double calorias = 0;
+        
+        for (Insumo insumo : insumos) {
+            calorias += insumo.getCalorias();
+        }
+        return calorias;
+    }
+
     public String getNome() {
         return nome;
     }
