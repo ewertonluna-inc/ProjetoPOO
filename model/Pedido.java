@@ -1,13 +1,15 @@
 package model;
 
 public class Pedido {
+    private int id;
     private Cliente cliente;
     private Lanche lanche;
     private double preco;
     private boolean paraViagem;
     private boolean isPronto;
 
-    public Pedido(Cliente cliente, Lanche lanche, boolean paraViagem) {
+    public Pedido(int id, Cliente cliente, Lanche lanche, boolean paraViagem) {
+        this.id = id;
         this.cliente = cliente;
         this.lanche = lanche;
         this.preco = lanche.getPreco();
@@ -42,10 +44,14 @@ public class Pedido {
         return resumo;
     }
 
+    public int getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
         return "Pedido [cliente=" + cliente + ", isPronto=" + isPronto + ", lanche=" + lanche + ", paraViagem="
-                + paraViagem + ", preco=" + preco + "]";
+                + paraViagem + ", preco=" + preco + ", id=" +  "]";
     }
 
 
