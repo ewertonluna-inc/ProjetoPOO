@@ -22,7 +22,7 @@ public class RepositorioPedido implements IRepositorioPedido {
 
     @Override
     public void inserirPedido(Pedido pedido) throws PedidoException {
-        // TODO Auto-generated method stub
+        listaDePedido.add(pedido);
 
     }
 
