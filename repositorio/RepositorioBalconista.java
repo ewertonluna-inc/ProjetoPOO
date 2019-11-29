@@ -61,8 +61,6 @@ public class RepositorioBalconista implements IRepositorioBalconista {
             listaDeBalconistas.remove(index);
             listaDeBalconistas.add(index, novoBalconista);
         }
-
-
     }
 
     public int indexDoBalconista(String cpf) {
