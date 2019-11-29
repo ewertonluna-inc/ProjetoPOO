@@ -9,6 +9,17 @@ public class RepositorioPedido implements IRepositorioPedido {
     private static RepositorioPedido instancia;
     private List<Pedido> listaDePedido = new ArrayList<>();
 
+    private RepositorioPedido() {
+
+    }
+
+    public static RepositorioPedido getInstancia() {
+        if (instancia == null) {
+            instancia = new RepositorioPedido();
+        }
+        return instancia;
+    }
+
     @Override
     public void inserirPedido(Pedido pedido) throws PedidoException {
         // TODO Auto-generated method stub
@@ -35,8 +46,7 @@ public class RepositorioPedido implements IRepositorioPedido {
 
     @Override
     public int getTamanho() {
-        // TODO Auto-generated method stub
-        return 0;
+        return listaDePedido.size();
     }
 
     @Override
