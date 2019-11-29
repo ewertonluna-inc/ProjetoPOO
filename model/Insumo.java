@@ -39,7 +39,7 @@ public class Insumo extends Alimento {
     }
 
     public void aumentarQuantidade() {
-        this.quantidade += 1;
+        aumentarQuantidade(1);
     }
 
     public void diminuirQuantidade(int quantidade) throws InsumoException{
@@ -47,16 +47,13 @@ public class Insumo extends Alimento {
             throw new IllegalArgumentException("Quantidade negativa não é válida");
         }
         if (this.quantidade - quantidade < 0) {
-            throw new InsumoException("Estoque mínimo não pode ser menor do que zero");
+            throw new InsumoException("Quantidade não pode ser menor do que zero");
         }
         this.quantidade -= quantidade;        
     }
 
     public void diminuirQuantidade() throws InsumoException{
-        if (this.quantidade - 1 < 0) {
-            throw new InsumoException("Quantidade mínima de insumo não pode ser menor do que zero");
-        }
-        this.quantidade -= 1;
+        diminuirQuantidade(1);
     }
 
     @Override

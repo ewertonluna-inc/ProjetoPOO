@@ -47,7 +47,8 @@ public class Lanche {
         if (insumos == null) {
             throw new LancheException("null não é um argumento válido");
         }
-        if (insumo.getQuantidade() == 0) {
+        // Quando adiciona-se um insumo, é necessário que sua quantidade seja, no mínimo, 1.
+        if (insumo.getQuantidade() < 1) {
             throw new LancheException("Quantidade do insumo adicionado tem que ser igual ou maior que 1");
         }
         // Se a lista de insumos estiver vazia, adiciona Insumo a lista
@@ -78,13 +79,14 @@ public class Lanche {
         if (insumo == null) {
             throw new LancheException("Não há '" + nome + "' entre os insumos");
         }
+        // Se a quantidade do insumo for no mínimo 1, remove o objeto insumo da lista
         if (insumo.getQuantidade() <= 1) {
             insumos.remove(insumo);
         } else {
             try {
                 insumo.diminuirQuantidade();
             } catch (InsumoException e) {
-                throw new LancheException("Quantidade de insumo mínima atingida");
+                throw new LancheException("Não foi possível remover insumo: " +e.getMessage());
             }
         }
 
