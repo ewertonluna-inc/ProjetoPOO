@@ -86,10 +86,9 @@ public class Lanche {
             try {
                 insumo.diminuirQuantidade();
             } catch (InsumoException e) {
-                throw new LancheException("Não foi possível remover insumo: " +e.getMessage());
+                throw new LancheException("Não foi possível remover insumo: " + e.getMessage());
             }
         }
-
     }
 
     public Insumo procurarInsumoPorNome(String nome) {
