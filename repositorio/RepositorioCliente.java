@@ -49,17 +49,16 @@ public class RepositorioCliente implements IRepositorioCliente {
                 return;
             }
         }
-
     }
 
     @Override
-    public void atualizarCliente(Cliente clienteAtualizado) throws ClienteException {
-        String cpf = clienteAtualizado.getCpf();
-        int index = retornaClientePorIndex(cpf);
+    public void atualizarCliente(Cliente novoCliente) throws ClienteException {
+        String cpf = novoCliente.getCpf();
+        int index = indexDoCliente(cpf);
 
         if (index != -1) {
             listaDeClientes.remove(index);
-            listaDeClientes.add(index, clienteAtualizado);
+            listaDeClientes.add(index, novoCliente);
         }
     }
 
@@ -74,9 +73,10 @@ public class RepositorioCliente implements IRepositorioCliente {
         }
 
         return existeCliente;
-    }
+    }    
 
-    private int retornaClientePorIndex(String cpf) {
+    // no final, deixar esse método como private
+    public int indexDoCliente(String cpf) {
         int index = 0;
         
         for (Cliente cliente : listaDeClientes) {
@@ -84,9 +84,12 @@ public class RepositorioCliente implements IRepositorioCliente {
                 return index;
             }
             index++;
-        }
-        
+        }   
         return -1;
+    }
+
+    public int getTamanho() {
+        return listaDeClientes.size();
     }
 
 }
