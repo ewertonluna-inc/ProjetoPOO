@@ -28,8 +28,16 @@ public class RepositorioPedido implements IRepositorioPedido {
 
     @Override
     public Pedido procurarPedido(int id) {
-        // TODO Auto-generated method stub
-        return null;
+        Pedido pedidoEncontrado = null;
+
+        for (Pedido pedido : listaDePedido) {
+            if (pedido.getId() == id) {
+                pedidoEncontrado = pedido;
+                break;
+            }
+        }
+
+        return pedidoEncontrado;
     }
 
     @Override
