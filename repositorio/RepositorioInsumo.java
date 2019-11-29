@@ -10,18 +10,29 @@ public class RepositorioInsumo implements IRepositorioInsumo {
     private static RepositorioInsumo instancia;
     private List<Insumo> listaDeInsumos = new ArrayList<>();
 
+    private RepositorioInsumo() {
+
+    }
+
+    public static RepositorioInsumo getInstancia() {
+        if (instancia == null) {
+            instancia = new RepositorioInsumo();
+        }
+        return instancia;
+    }
+
     @Override
     public void inserirInsumo(Insumo insumo) throws InsumoException {
-        for (Insumo item : listaDeInsumos) {
-            if (item != null && item.getNome().equals(insumo.getNome())) {
-                item.aumentarQuantidade(insumo.getQuantidade());
-                return;
-            } else {
-                listaDeInsumos.add(insumo);
-                return;
-            }
-        }
+        String nome = insumo.getNome();
+        int index = indexDoInsumo(nome);
 
+        // Se o tamanho da lista for 0 ou não existir insumo que contenha o mesmo nome, adiciona o objeto insumo a lista
+        if (listaDeInsumos.size() == 0 || index == -1) {
+            listaDeInsumos.add(insumo);
+            return;
+        } 
+        // Caso contrário, adiciona-se à quantidade do insumo já existe
+        listaDeInsumos.get(index).aumentarQuantidade(insumo.getQuantidade());
     }
 
     @Override
@@ -42,7 +53,7 @@ public class RepositorioInsumo implements IRepositorioInsumo {
         for (Insumo insumo : listaDeInsumos) {
             if (insumo != null && insumo.getNome().equals(nome)) {
                 
-                if (insumo.getQuantidade() == 0) {
+                if (insumo.getQuantidade() == 0 || quantidade > insumo.getQuantidade()) {
                     listaDeInsumos.remove(insumo);
                 } else {
                     insumo.diminuirQuantidade(quantidade);
@@ -67,7 +78,9 @@ public class RepositorioInsumo implements IRepositorioInsumo {
         
         for (Insumo insumo : listaDeInsumos) {
             if (insumo != null && insumo.getNome().equals(nome)) {
-                insumo = novoInsumo;
+                int index = listaDeInsumos.indexOf(insumo);
+                listaDeInsumos.remove(index);
+                listaDeInsumos.add(index, novoInsumo);
                 return;
             }
         }
@@ -78,4 +91,25 @@ public class RepositorioInsumo implements IRepositorioInsumo {
         return listaDeInsumos.size();
     }
 
+    // Método que será útil para o controlador
+    public int indexDoInsumo(String nome) {
+        int index = 0;
+
+        for (Insumo insumo : listaDeInsumos) {
+            if (insumo != null && insumo.getNome().equals(nome)) {
+                return index;
+            }
+            index++;
+        }
+        return -1;
+    }
+
+    // Função apenas para fazer testes
+    // TODO: Apagar essa função quando terminar o trabalho
+    public void mostraLista() {
+        for (Insumo insumo : listaDeInsumos) {
+            System.out.println(insumo);
+        }
+        System.out.println("--------------");
+    }
 }
