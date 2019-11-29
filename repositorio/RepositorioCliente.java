@@ -56,26 +56,13 @@ public class RepositorioCliente implements IRepositorioCliente {
         String cpf = novoCliente.getCpf();
         int index = indexDoCliente(cpf);
 
+        // Esse pode ser redundante, já que o contrador já vai fazer essa verificação
         if (index != -1) {
             listaDeClientes.remove(index);
             listaDeClientes.add(index, novoCliente);
         }
-    }
+    } 
 
-    public boolean existeCliente(String cpf) {
-        boolean existeCliente = false;
-
-        for (Cliente cliente : listaDeClientes) {
-            if (cliente != null && cliente.getCpf().equals(cpf)) {
-                existeCliente = true;
-                break;
-            }
-        }
-
-        return existeCliente;
-    }    
-
-    // no final, deixar esse método como private
     public int indexDoCliente(String cpf) {
         int index = 0;
         

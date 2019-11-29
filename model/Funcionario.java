@@ -37,7 +37,7 @@ abstract public class Funcionario extends Pessoa{
 
     @Override
     public String toString() {
-        return "Funcionario [empresa=" + empresa +  ", tempoDeExperiencia=" + tempoDeExperiencia
+        return "Funcionario [nome = " + getNome() + ", cpf=" + getCpf() + ", empresa=" + empresa +  ", tempoDeExperiencia=" + tempoDeExperiencia
                 + "]";
     }
 
