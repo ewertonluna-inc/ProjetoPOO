@@ -81,11 +81,10 @@ public class Lanche {
         if (insumo.getQuantidade() <= 1) {
             insumos.remove(insumo);
         } else {
-            // TODO: Perguntar ao professor porque esse try é necessário
             try {
                 insumo.diminuirQuantidade();
             } catch (InsumoException e) {
-                e.printStackTrace();
+                throw new LancheException("Quantidade de insumo mínima atingida");
             }
         }
 
