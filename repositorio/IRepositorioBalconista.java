@@ -8,4 +8,6 @@ public interface IRepositorioBalconista {
     Balconista procurarBalconista(String cpf);
     void removerBalconista(String cpf) throws BalconistaException;
     void atualizarBalconista(Balconista balconista) throws BalconistaException;
+    int indexDoBalconista(String cpf);
+    int getTamanho();
 }

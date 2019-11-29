@@ -8,4 +8,6 @@ public interface IRepositorioGerente {
     Gerente procurarGerente(String cpf);
     void removerGerente(String cpf) throws GerenteException;
     void atualizarGerente(Gerente gerente) throws GerenteException;
+    int indexDoGerente(String cpf);
+    int getTamanho();
 }

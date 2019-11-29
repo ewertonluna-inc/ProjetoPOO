@@ -8,4 +8,5 @@ public interface IRepositorioInsumo {
     Insumo procurarInsumo(String nome);
     void removerInsumo(String nome, int quantidade) throws InsumoException;
     void atualizarInsumo(Insumo insumo) throws InsumoException;
+    int getTamanho();
 }
