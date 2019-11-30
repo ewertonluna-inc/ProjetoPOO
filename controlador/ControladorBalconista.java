@@ -22,14 +22,13 @@ public class ControladorBalconista implements IControladorBalconista {
 
     @Override
     public void inserirBalconista(Balconista balconista) throws BalconistaException {
+        if (balconista == null) {
+            throw new BalconistaException("balconista não é um argumento válido");
+        }
+
         String cpf = balconista.getCpf();
-        
-        // TODO: Perguntar ao professor o porque disso ser código morto.
-        // if (balconista == null) {
-        //     throw new BalconistaException("null não é um argumento válido");
-        // }
         if (repositorioBalconista.indexDoBalconista(cpf) != -1) {
-            throw new BalconistaException("CPF (" + cpf + ") já existente no repositório");
+            throw new BalconistaException("Já existe balconista cadastrado com o CPF (" + cpf +")");
         }
         
         repositorioBalconista.inserirBalconista(balconista);
@@ -59,11 +58,11 @@ public class ControladorBalconista implements IControladorBalconista {
 
     @Override
     public void atualizarBalconista(Balconista balconista) throws BalconistaException {
+        if (balconista == null) {
+            throw new BalconistaException("balconista não pode ser 'null'");
+        }
+
         String cpf = balconista.getCpf();
-        // TODO: Perguntar ao professor o porque disso ser código morto.
-        // if (balconista == null) {
-        //     throw new BalconistaException("null não é argumento válido");
-        // }
         if (repositorioBalconista.indexDoBalconista(cpf) == -1) {
             throw new BalconistaException("Não existe balconista cadastrado com o CPF dado (" + cpf + ")");
         }
