@@ -50,7 +50,7 @@ public class ControladorCozinheiro implements IControladorCozinheiro {
             throw new CozinheiroException("CPF vazio ou 'null' não é argumento inválido");
         }
         if (repositorioCozinheiro.indexDoCozinheiro(cpf) == -1) {
-            throw new CozinheiroException("Não existe balconista com o CPF dado (" + cpf + ")");
+            throw new CozinheiroException("Não existe cozinheiro com o CPF dado (" + cpf + ")");
         }
         repositorioCozinheiro.removerCozinheiro(cpf);
 
