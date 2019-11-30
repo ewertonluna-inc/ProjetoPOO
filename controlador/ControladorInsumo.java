@@ -13,7 +13,7 @@ public class ControladorInsumo implements IControladorInsumo {
         repositorioInsumo = RepositorioInsumo.getInstancia();
     }
 
-    public static ControladorInsumo getInstacia() {
+    public static ControladorInsumo getInstancia() {
         if (instancia == null) {
             instancia = new ControladorInsumo();
         }
@@ -30,34 +30,52 @@ public class ControladorInsumo implements IControladorInsumo {
 
     @Override
     public Insumo procurarInsumo(String nome) throws InsumoException {
-        if (nome == null || nome.isEmpty) {
+        if (nome == null || nome.isEmpty()) {
             throw new InsumoException("nome vazio ou 'null' não é argumento inválido");
+        }
+        if(repositorioInsumo.indexDoInsumo(nome) != -1) {
+            return repositorioInsumo.procurarInsumo(nome);
         }
         return null;
     }
 
     @Override
     public void removerInsumo(String nome, int quantidade) throws InsumoException {
-        // TODO Auto-generated method stub
-
+        if (nome == null || nome.isEmpty() || quantidade < 0) {
+            throw new InsumoException("Parâmetro 'nome' ou 'quantidade' inválido");
+        }
+        if (repositorioInsumo.indexDoInsumo(nome) == -1) {
+            throw new InsumoException("Não existe ìnsumo com o 'nome' (" + nome + ") dado");
+        }
+        repositorioInsumo.removerInsumo(nome, quantidade);
     }
 
     @Override
     public void removerInsumo(String nome) throws InsumoException {
-        // TODO Auto-generated method stub
-
+        if (nome == null || nome.isEmpty()) {
+            throw new InsumoException("Parâmetro 'nome' ou 'quantidade' inválido");
+        }
+        if (repositorioInsumo.indexDoInsumo(nome) == -1) {
+            throw new InsumoException("Não existe ìnsumo com o 'nome' (" + nome + ") dado");
+        }
+        repositorioInsumo.removerInsumo(nome);
     }
 
     @Override
     public void atualizarInsumo(Insumo insumo) throws InsumoException {
-        // TODO Auto-generated method stub
-
+        if (insumo == null) {
+            throw new InsumoException("insumo não pode ser 'null'");
+        }
+        String nome = insumo.getNome();
+        if (repositorioInsumo.indexDoInsumo(nome) == -1) {
+            throw new InsumoException("Não existe insumo cadastrado com o 'nome' dado (" + nome + ")");
+        }
+        repositorioInsumo.atualizarInsumo(insumo);
     }
 
     @Override
     public int getTamanho() {
-        // TODO Auto-generated method stub
-        return 0;
+        return repositorioInsumo.getTamanho();
     }
 
 }
