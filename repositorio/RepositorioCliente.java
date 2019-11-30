@@ -79,4 +79,13 @@ public class RepositorioCliente implements IRepositorioCliente {
         return listaDeClientes.size();
     }
 
+    // Função apenas para fazer testes
+    // TODO: Apagar essa função quando terminar o trabalho
+    public void mostraLista() {
+        for (Cliente cliente : listaDeClientes) {
+            System.out.println(cliente);
+        }
+        System.out.println("--------------");
+    }
+
 }
