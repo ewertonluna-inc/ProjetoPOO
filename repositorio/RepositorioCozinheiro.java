@@ -50,13 +50,13 @@ public class RepositorioCozinheiro implements IRepositorioCozinheiro {
     }
 
     @Override
-    public void atualizarCozinheiro(Cozinheiro novoGerente) throws CozinheiroException {
-        String cpf = novoGerente.getCpf();
+    public void atualizarCozinheiro(Cozinheiro novoCozinheiro) throws CozinheiroException {
+        String cpf = novoCozinheiro.getCpf();
         int index = indexDoCozinheiro(cpf);
 
         if (index != -1) {
             listaDeCozinheiros.remove(index);
-            listaDeCozinheiros.add(index, novoGerente);
+            listaDeCozinheiros.add(index, novoCozinheiro);
         }
     }
 
