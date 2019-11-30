@@ -1,30 +1,24 @@
 package model;
 
 public class Pedido {
-    private int id;
+    private static final double PRECO_EMBALAGEM = 2;
+    private String id;
     private Cliente cliente;
     private Lanche lanche;
     private double preco;
     private boolean paraViagem;
     private boolean isPronto;
 
-    public Pedido(int id, Cliente cliente, Lanche lanche, boolean paraViagem) {
+    public Pedido(String id, Cliente cliente, Lanche lanche, boolean paraViagem) {
         this.id = id;
         this.cliente = cliente;
         this.lanche = lanche;
         this.preco = lanche.getPreco();
         this.paraViagem = paraViagem;
         if (paraViagem) {
-            incluirPrecoEmbalagem(2);
+            this.preco += PRECO_EMBALAGEM;
         }
         isPronto = false;
-    }
-
-    private void incluirPrecoEmbalagem(double precoEmbalagem) {
-        if (precoEmbalagem < 0) {
-            throw new IllegalArgumentException("Preço não pode ser negativo");
-        }
-        preco += precoEmbalagem;
     }
 
     public void pedidoPronto() {
@@ -44,17 +38,13 @@ public class Pedido {
         return resumo;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
     @Override
     public String toString() {
         return "Pedido [cliente=" + cliente + ", isPronto=" + isPronto + ", lanche=" + lanche + ", paraViagem="
-                + paraViagem + ", preco=" + preco + ", id=" +  "]";
+                + paraViagem + ", preco=" + preco + ", id=" +  getId() + "]";
     }
-
-
-
-
 }
