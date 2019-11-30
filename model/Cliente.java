@@ -1,7 +1,7 @@
 package model;
 
 public class Cliente extends Pessoa {
-    Pedido pedido;
+    Pedido ultimoPedido;
 
     public Cliente(String nome, String cpf) {
         super(nome, cpf);
