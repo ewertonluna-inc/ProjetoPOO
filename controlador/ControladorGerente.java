@@ -61,7 +61,6 @@ public class ControladorGerente implements IControladorGerente {
         if (gerente == null) {
             throw new GerenteException("gerente não pode ser 'null'");
         }
-
         String cpf = gerente.getCpf();
         if (repositorioGerente.indexDoGerente(cpf) == -1) {
             throw new GerenteException("Não existe gerente cadastrado com o CPF dado (" + cpf + ")");
