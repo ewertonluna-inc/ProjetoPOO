@@ -2,7 +2,6 @@ package repositorio;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import exception.InsumoException;
 import model.Insumo;
 
@@ -92,6 +91,7 @@ public class RepositorioInsumo implements IRepositorioInsumo {
     }
 
     // Método que será útil para o controlador
+    @Override
     public int indexDoInsumo(String nome) {
         int index = 0;
 
