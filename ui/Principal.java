@@ -2,14 +2,15 @@ package ui;
 
 import java.util.Scanner;
 
-import controlador.*;
-import model.*;
-import repositorio.*;
-import exception.*;
+// import controlador.*;
+// import model.*;
+// import repositorio.*;
+// import exception.*;
 
 public class Principal {
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
+        
         boolean sair = false;
         String opcao;
 
@@ -33,8 +34,8 @@ public class Principal {
             if (opcao.equals("0")) {
                 sair = true;
             } else if (opcao.equals("1")) {
-                //UICadastroCliente uiCadastroCliente = new UICadastrCliente();
-                // uiCadastroCliente.showMenu();
+                //UICadastroBalconista uiCadastroCliente = new UICadastroBalconista();
+                // uiCadastroBalconista.showMenu();
             } else if (opcao.equals("2")) {
                 //UICadastroCozinheiro uiCadastroCozinheiro = new UICadastroCozinheiro();
                 // uiCadastroCozinheiro.showMenu();
