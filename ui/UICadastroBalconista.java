@@ -32,7 +32,7 @@ public class UICadastroBalconista implements IMenu {
             } else if (opcao.equals("2")) {
                 removerBalconista();
             } else if (opcao.equals("3")) {
-                // procurarBalconista();
+                procurarBalconista();
             } else if (opcao.equals("4")) {
                 // atualizarBalconista();
             }
@@ -91,6 +91,26 @@ public class UICadastroBalconista implements IMenu {
     }
 
     private void procurarBalconista() {
+        Balconista balconista;
+        String cpf;
+
+        System.out.print("CPF: ");
+        cpf = scanner.nextLine();
+        try {
+            balconista = Fachada.getInstancia().procurarBalconista(cpf);
+        } catch (BalconistaException e) {
+            System.out.println("Erro ao procurar balconista: " + e.getMessage());
+            System.out.println();
+            return;
+        }
+
+        if (balconista == null) {
+            System.out.println("Não existe cadastro com esse cpf (" + cpf + ")");
+            System.out.println();
+        } else {
+            System.out.println(balconista);
+            System.out.println();
+        }
     }
 
     private void atualizarBalconista() {
