@@ -30,7 +30,7 @@ public class UICadastroBalconista implements IMenu {
             } else if (opcao.equals("1")) {
                 inserirBalconista();
             } else if (opcao.equals("2")) {
-                // removerBalconista();
+                removerBalconista();
             } else if (opcao.equals("3")) {
                 // procurarBalconista();
             } else if (opcao.equals("4")) {
@@ -75,6 +75,19 @@ public class UICadastroBalconista implements IMenu {
     }
 
     private void removerBalconista() {
+        String cpf;
+
+        System.out.print("CPF: ");
+        cpf = scanner.nextLine();
+
+        try {
+            Fachada.getInstancia().removerBalconista(cpf);
+            System.out.println("Balconista removido com sucesso!");
+            System.out.println();
+        } catch (BalconistaException e) {
+            System.out.println("Erro ao remover balconista: " + e.getMessage());
+            System.out.println();
+        }
     }
 
     private void procurarBalconista() {
