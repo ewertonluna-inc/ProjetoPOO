@@ -38,11 +38,11 @@ public class Principal {
                 UICadastroBalconista uiCadastroBalconista = new UICadastroBalconista();
                 uiCadastroBalconista.showMenu();
             } else if (opcao.equals("2")) {
-                //UICadastroCozinheiro uiCadastroCozinheiro = new UICadastroCozinheiro();
-                // uiCadastroCozinheiro.showMenu();
+                UICadastroCozinheiro uiCadastroCozinheiro = new UICadastroCozinheiro();
+                uiCadastroCozinheiro.showMenu();
             } else if (opcao.equals("3")) {
-                // UICadastroGerente uiCadastroGerente = new UICadastroGerente();
-                // uiCadastroGerente.showMenu();
+                UICadastroGerente uiCadastroGerente = new UICadastroGerente();
+                uiCadastroGerente.showMenu();
             } else if (opcao.equals("4")) {
                 // UICadastroCliente uiCadastroCliente = new UICadastroCliente();
                 // uiCadastroCliente.showMenu();
