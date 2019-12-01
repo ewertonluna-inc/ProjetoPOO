@@ -1,4 +1,4 @@
-# Projeto de Programação Orientada a Objeto
+# Projeto de Programação Orientada a Objetos
 ## Sistema de Lanchonete
 
 O presente projeto busca simular um pequeno sistema de uma lanchonete onde o quadro de funcionários consiste em:
