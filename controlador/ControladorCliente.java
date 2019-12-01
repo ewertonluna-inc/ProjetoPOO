@@ -37,7 +37,7 @@ public class ControladorCliente implements IControladorCliente {
     @Override
     public Cliente procurarCliente(String cpf) throws ClienteException{
         if (cpf == null || cpf.isEmpty()) {
-            throw new ClienteException("CPF vazio ou 'null' não é argumento inválido");
+            throw new ClienteException("CPF vazio ou 'null' não é argumento válido");
         }
         if (repositorioCliente.indexDoCliente(cpf) != -1) {
             return repositorioCliente.procurarCliente(cpf);

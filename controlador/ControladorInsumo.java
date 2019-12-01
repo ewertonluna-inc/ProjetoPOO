@@ -31,7 +31,7 @@ public class ControladorInsumo implements IControladorInsumo {
     @Override
     public Insumo procurarInsumo(String nome) throws InsumoException {
         if (nome == null || nome.isEmpty()) {
-            throw new InsumoException("nome vazio ou 'null' não é argumento inválido");
+            throw new InsumoException("nome vazio ou 'null' não é argumento válido");
         }
         if(repositorioInsumo.indexDoInsumo(nome) != -1) {
             return repositorioInsumo.procurarInsumo(nome);

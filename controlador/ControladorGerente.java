@@ -37,7 +37,7 @@ public class ControladorGerente implements IControladorGerente {
 	@Override
 	public Gerente procurarGerente(String cpf) throws GerenteException {
 		if (cpf == null ||  cpf.isEmpty()) {
-            throw new GerenteException("CPF vazio ou 'null' não é argumento inválido");
+            throw new GerenteException("CPF vazio ou 'null' não é argumento válido");
         }
         if (repositorioGerente.indexDoGerente(cpf) != -1) {
             return repositorioGerente.procurarGerente(cpf);
@@ -48,7 +48,7 @@ public class ControladorGerente implements IControladorGerente {
 	@Override
 	public void removerGerente(String cpf) throws GerenteException {
 		if (cpf == null ||  cpf.isEmpty()) {
-            throw new GerenteException("CPF vazio ou 'null' não é argumento inválido");
+            throw new GerenteException("CPF vazio ou 'null' não é argumento válido");
         }
 		if (repositorioGerente.indexDoGerente(cpf) == -1) {
             throw new GerenteException("Não existe balconista com o CPF dado (" + cpf + ")");

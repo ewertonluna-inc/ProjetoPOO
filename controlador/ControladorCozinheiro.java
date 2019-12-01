@@ -36,7 +36,7 @@ public class ControladorCozinheiro implements IControladorCozinheiro {
     @Override
     public Cozinheiro procurarCozinheiro(String cpf) throws CozinheiroException {
         if (cpf == null ||  cpf.isEmpty()) {
-            throw new CozinheiroException("CPF vazio ou 'null' não é argumento inválido");
+            throw new CozinheiroException("CPF vazio ou 'null' não é argumento válido");
         }
         if (repositorioCozinheiro.indexDoCozinheiro(cpf) != -1) {
             return repositorioCozinheiro.procurarCozinheiro(cpf);
@@ -47,7 +47,7 @@ public class ControladorCozinheiro implements IControladorCozinheiro {
     @Override
     public void removerCozinheiro(String cpf) throws CozinheiroException {
         if (cpf == null || cpf.isEmpty()) {
-            throw new CozinheiroException("CPF vazio ou 'null' não é argumento inválido");
+            throw new CozinheiroException("CPF vazio ou 'null' não é argumento válido");
         }
         if (repositorioCozinheiro.indexDoCozinheiro(cpf) == -1) {
             throw new CozinheiroException("Não existe cozinheiro com o CPF dado (" + cpf + ")");

@@ -37,7 +37,7 @@ public class ControladorBalconista implements IControladorBalconista {
     @Override
     public Balconista procurarBalconista(String cpf) throws BalconistaException {
         if (cpf == null || cpf.isEmpty()) {
-            throw new BalconistaException("CPF vazio ou null não é argumento inválido");
+            throw new BalconistaException("CPF vazio ou null não é argumento válido");
         }
         if (repositorioBalconista.indexDoBalconista(cpf) != -1) {
             return repositorioBalconista.procurarBalconista(cpf);
@@ -48,7 +48,7 @@ public class ControladorBalconista implements IControladorBalconista {
     @Override
     public void removerBalconista(String cpf) throws BalconistaException {
         if (cpf == null || cpf.isEmpty()) {
-            throw new BalconistaException("CPF vazio ou null não é argumento inválido");
+            throw new BalconistaException("CPF vazio ou null não é argumento válido");
         }
         if (repositorioBalconista.indexDoBalconista(cpf) == -1) {
             throw new BalconistaException("Não existe balconista com o CPF dado (" + cpf + ")");
