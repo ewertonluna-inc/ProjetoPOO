@@ -54,7 +54,7 @@ public class Gerente extends Funcionario {
     @Override
     public String toString() {
         return "Funcionario [nome = " + getNome() + ", cpf=" + getCpf() + ", empresa=" + getEmpresa() +  ", tempoDeExperiencia=" + getTempoDeExperiencia() 
-        + ", solicitacao=" + getSolicitacao() + "]";
+        + ", solicitacao=" + getSolicitacao() + ", salario=" + getSalario() + "]";
     }
 }
 
