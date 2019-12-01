@@ -19,5 +19,11 @@ public class Balconista extends Funcionario{
         return Math.pow(TAXA_DE_AUMENTO_ANUAL, tempoDeExperiencia) * SALARIO_INICIAL;
     }
 
+    @Override
+    public String toString() {
+        return "Funcionario [nome = " + getNome() + ", cpf=" + getCpf() + ", empresa=" + getEmpresa() +  ", tempoDeExperiencia=" + getTempoDeExperiencia() 
+            + ", salario=" + getSalario() + "]";
+    }
+
 
 }
