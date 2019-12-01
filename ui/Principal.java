@@ -44,8 +44,8 @@ public class Principal {
                 UICadastroGerente uiCadastroGerente = new UICadastroGerente();
                 uiCadastroGerente.showMenu();
             } else if (opcao.equals("4")) {
-                // UICadastroCliente uiCadastroCliente = new UICadastroCliente();
-                // uiCadastroCliente.showMenu();
+                UICadastroCliente uiCadastroCliente = new UICadastroCliente();
+                uiCadastroCliente.showMenu();
             } else if (opcao.equals("5")) {
                 // UICadastroPedido uiCadastroPedido = new UICadastroPedido();
                 // uiCadastroPedido.showMenu();
