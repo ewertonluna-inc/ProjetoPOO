@@ -30,12 +30,13 @@ public class Principal {
             System.out.print("Opcão >> ");
 
             opcao = scanner.nextLine();
+            System.out.println();
             
             if (opcao.equals("0")) {
                 sair = true;
             } else if (opcao.equals("1")) {
-                //UICadastroBalconista uiCadastroCliente = new UICadastroBalconista();
-                // uiCadastroBalconista.showMenu();
+                UICadastroBalconista uiCadastroBalconista = new UICadastroBalconista();
+                uiCadastroBalconista.showMenu();
             } else if (opcao.equals("2")) {
                 //UICadastroCozinheiro uiCadastroCozinheiro = new UICadastroCozinheiro();
                 // uiCadastroCozinheiro.showMenu();
