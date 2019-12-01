@@ -25,6 +25,9 @@ public class ControladorInsumo implements IControladorInsumo {
         if (insumo == null) {
             throw new InsumoException("insumo não pode ser 'null'");
         }
+        if (insumo.getQuantidade() < 0) {
+            throw new InsumoException("campo 'quantidade de insumo não pode ser negativo'");
+        }
         repositorioInsumo.inserirInsumo(insumo);
     }
 

@@ -8,9 +8,6 @@ public class Insumo extends Alimento {
 
     public Insumo(String nome, double caloriasIndividual, double precoIndividual, int quantidade) {
         super(nome, caloriasIndividual);
-        if (quantidade < 0) {
-            throw new IllegalArgumentException("Argumento não válido");
-        }
         this.precoIndividual = precoIndividual;
         this.quantidade = quantidade;
     }
