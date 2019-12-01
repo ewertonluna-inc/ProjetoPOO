@@ -34,7 +34,7 @@ public class UICadastroBalconista implements IMenu {
             } else if (opcao.equals("3")) {
                 procurarBalconista();
             } else if (opcao.equals("4")) {
-                // atualizarBalconista();
+                atualizarBalconista();
             }
         }
 
@@ -114,6 +114,36 @@ public class UICadastroBalconista implements IMenu {
     }
 
     private void atualizarBalconista() {
+        String nome, cpf, empresa;
+        String aux;
+        byte tempoDeExperiencia;
+
+        System.out.print("Nome: ");
+        nome = scanner.nextLine();
+        System.out.print("CPF: ");
+        cpf = scanner.nextLine();
+        System.out.print("Empresa: ");
+        empresa = scanner.nextLine();
+        System.out.print("Tempo de experiência: ");
+        aux = scanner.nextLine();
+
+        try {
+            tempoDeExperiencia = Byte.parseByte(aux);
+        } catch (Exception e) {
+            System.out.println("Erro de input: " + e.getMessage());
+            return;
+        }
+
+        Balconista balconista = new Balconista(nome, cpf, empresa, tempoDeExperiencia);
+        
+        try {
+            Fachada.getInstancia().atualizarBalconista(balconista);
+            System.out.println("Balconista atualizado com sucesso!");
+            System.out.println();
+        } catch (BalconistaException e) {
+            System.out.println("Erro ao atualizar balconista: " + e.getMessage());
+            System.out.println();
+        }
     }
     
 }
