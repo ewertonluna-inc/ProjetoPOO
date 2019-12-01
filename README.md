@@ -8,8 +8,8 @@ O presente projeto busca simular um pequeno sistema de uma lanchonete onde o qua
 O menu principal dá as opções de cadastros dos funcionários e também de clientes, insumos e pedidos.
 
 O sistema, além de desempenhar cadastros com as funções CRUD, também realiza tarefas de
-- Gerar Pedido: balconista cria um pedido para o cliente, envia para um cozinheiro que, quando o pedido estiver pronto, dá entrada no sistema e depois gera uma nota fiscal **(TODO)**
-- Abrir Solicitação: cria uma solicitação que é enviada para um gerente. O gerente tem o encargo de, quando resolver a solicitação, dar entrada no sistema. **(TODO)**
+- Gerar Pedido: balconista cria um pedido para o cliente, envia para um cozinheiro que, quando o pedido estiver pronto, dá entrada no sistema e depois gera uma nota fiscal **(A CONCLUIR)**
+- Abrir Solicitação: cria uma solicitação que é enviada para um gerente. O gerente tem o encargo de, quando resolver a solicitação, dar entrada no sistema. **(A CONCLUIR)**
 
 OBSERVAÇÕES: 
 - Todos os repositórios, controladores, modelos, exceções e menu principal estão prontos e funcionais.
