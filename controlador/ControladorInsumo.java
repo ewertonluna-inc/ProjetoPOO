@@ -48,7 +48,7 @@ public class ControladorInsumo implements IControladorInsumo {
             throw new InsumoException("Parâmetro 'nome' ou 'quantidade' inválido");
         }
         if (repositorioInsumo.indexDoInsumo(nome) == -1) {
-            throw new InsumoException("Não existe ìnsumo com o 'nome' (" + nome + ") dado");
+            throw new InsumoException("Não existe insumo com o 'nome' (" + nome + ") dado");
         }
         repositorioInsumo.removerInsumo(nome, quantidade);
     }
