@@ -21,6 +21,7 @@ public class UICadastroInsumo implements IMenu{
             System.out.println("2 - Remover Insumo");
             System.out.println("3 - Procurar Insumo");
             System.out.println("4 - Atualizar Insumo");
+            // System.out.println("5 - Encher estoque de insumo");
             System.out.print("Opção >> ");
 
             opcao = scanner.nextLine();
@@ -33,9 +34,11 @@ public class UICadastroInsumo implements IMenu{
             } else if (opcao.equals("2")) {
                 removerInsumo();
             } else if (opcao.equals("3")) {
-                // procurarInsumo();
+                procurarInsumo();
             } else if (opcao.equals("4")) {
-                // atualizarInsumo();
+                atualizarInsumo();
+            } else if (opcao.equals("5")) {
+                // encherEstoqueDeInsumo()
             }
         }
 
@@ -129,6 +132,67 @@ public class UICadastroInsumo implements IMenu{
             System.out.println();
         } catch (InsumoException e) {
             System.out.println("Erro ao remover insumo: " + e.getMessage());
+            System.out.println();
+        }
+    }
+
+    private void procurarInsumo() {
+        Insumo insumo;
+        String nome;
+
+        System.out.print("Nome: ");
+        nome = scanner.nextLine();
+        
+        try {
+            insumo = Fachada.getInstancia().procurarInsumo(nome);
+        } catch (InsumoException e) {
+            System.out.println("Erro ao procurar insumo: " + e.getMessage());
+            System.out.println();
+            return;
+        }
+
+        if (insumo == null) {
+            System.out.println("Não existe cadastro com esse nome (" + nome + ")");
+            System.out.println();
+        } else {
+            System.out.println(insumo);
+            System.out.println();
+        }
+    }
+
+    public void atualizarInsumo() {
+        String nome;
+        String aux1, aux2, aux3;
+        double caloriasIndividual, precoIndividual;
+        int quantidade;
+
+        System.out.print("Nome: ");
+        nome = scanner.nextLine();
+        System.out.print("Calorias por porção: ");
+        aux1 = scanner.nextLine();
+        System.out.println("Preço por unidade: ");
+        aux2 = scanner.nextLine();
+        System.out.println("Quantidade: ");
+        aux3 = scanner.nextLine();
+
+        try {
+            caloriasIndividual = Double.parseDouble(aux1);
+            precoIndividual = Double.parseDouble(aux2);
+            quantidade = Integer.parseInt(aux3);
+        } catch (Exception e) {
+            System.out.println("Erro de input: " + e.getMessage());
+            System.out.println();
+            return;
+        }
+
+        Insumo insumo = new Insumo(nome, caloriasIndividual, precoIndividual, quantidade);
+
+        try {
+            Fachada.getInstancia().atualizarInsumo(insumo);
+            System.out.println("Insumo atualizado com sucesso!");
+            System.out.println();
+        } catch (InsumoException e) {
+            System.out.println("Erro ao atualizar insumo: " + e.getMessage());
             System.out.println();
         }
     }
