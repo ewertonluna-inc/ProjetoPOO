@@ -50,8 +50,8 @@ public class Principal {
                 // UICadastroPedido uiCadastroPedido = new UICadastroPedido();
                 // uiCadastroPedido.showMenu();
             } else if (opcao.equals("6")) {
-                // UICadastroInsumo uiCadastroInsumo = new UICadastroInsumo();
-                // uiCadastroInsumo.showMenu();
+                UICadastroInsumo uiCadastroInsumo = new UICadastroInsumo();
+                uiCadastroInsumo.showMenu();
             } else if (opcao.equals("7")) {
                 // UIBalconista uiBalconista = new UIBalconista();
                 // uiBalconista.showMenu();
