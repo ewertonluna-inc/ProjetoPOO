@@ -41,7 +41,7 @@ public class UICadastroCliente implements IMenu {
     }
 
     private void inserirCliente() {
-        String nome, cpf, empresa;
+        String nome, cpf;
         
         System.out.print("Nome: ");
         nome = scanner.nextLine();
