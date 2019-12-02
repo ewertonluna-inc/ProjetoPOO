@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import exception.InsumoException;
 import model.Insumo;
+import util.Estoque;
 
 public class RepositorioInsumo implements IRepositorioInsumo {
     private static RepositorioInsumo instancia;
@@ -111,5 +112,14 @@ public class RepositorioInsumo implements IRepositorioInsumo {
             System.out.println(insumo);
         }
         System.out.println("--------------");
+    }
+
+    @Override
+    public void encherEstoque() {
+        listaDeInsumos.clear();
+        listaDeInsumos.add(Estoque.createTomate());
+        listaDeInsumos.add(Estoque.createAlface());
+        listaDeInsumos.add(Estoque.createCarne());
+        listaDeInsumos.add(Estoque.createPao());
     }
 }

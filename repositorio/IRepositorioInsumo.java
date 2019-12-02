@@ -10,5 +10,6 @@ public interface IRepositorioInsumo {
     void removerInsumo(String nome) throws InsumoException;
     void atualizarInsumo(Insumo insumo) throws InsumoException;
     int indexDoInsumo(String nome);
+    void encherEstoque();
     int getTamanho();
 }
