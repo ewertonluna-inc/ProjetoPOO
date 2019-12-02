@@ -21,7 +21,7 @@ public class UICadastroInsumo implements IMenu{
             System.out.println("2 - Remover Insumo");
             System.out.println("3 - Procurar Insumo");
             System.out.println("4 - Atualizar Insumo");
-            // System.out.println("5 - Encher estoque de insumo");
+            System.out.println("5 - Encher estoque de insumo");
             System.out.print("Opção >> ");
 
             opcao = scanner.nextLine();
@@ -38,7 +38,7 @@ public class UICadastroInsumo implements IMenu{
             } else if (opcao.equals("4")) {
                 atualizarInsumo();
             } else if (opcao.equals("5")) {
-                // encherEstoqueDeInsumo()
+                encherEstoqueDeInsumo();
             }
         }
 
@@ -194,6 +194,32 @@ public class UICadastroInsumo implements IMenu{
         } catch (InsumoException e) {
             System.out.println("Erro ao atualizar insumo: " + e.getMessage());
             System.out.println();
+        }
+    }
+
+    private void encherEstoqueDeInsumo() {
+        String escolha;
+
+        System.out.println("*** Atenção ***");
+        System.out.println(
+            "Ao usar essa opção, quaisquer cadastros anteriores são apagados e o estoque\n" +
+            "será renovado com:\n" +
+            "100 unidades de Tomate\n" +
+            "100 unidades de Alface\n" +
+            "100 unidades de Carne\n" +
+            "100 unidades de Pão\n"
+        );
+
+        System.out.println("Você deseja continuar com essa ação? Se sim, digite 's'.");
+        
+        escolha = scanner.nextLine();
+        
+        if (escolha.equals("s")) {
+            Fachada.getInstancia().encherEstoqueDeInsumo();
+            System.out.println("Estoque renovado com sucesso!");
+            System.out.println();
+        } else {
+            System.out.println("O estoque não foi renovado.");
         }
     }
 
