@@ -81,4 +81,9 @@ public class ControladorInsumo implements IControladorInsumo {
         return repositorioInsumo.getTamanho();
     }
 
+    @Override
+    public void encherEstoqueDeInsumo() {
+        repositorioInsumo.encherEstoque();
+    }
+
 }

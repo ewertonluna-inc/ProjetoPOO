@@ -174,5 +174,10 @@ public class Fachada implements IControladorBalconista, IControladorCliente, ICo
         // TODO Auto-generated method stub
         return 0;
     }
+
+    @Override
+    public void encherEstoqueDeInsumo() {
+        controladorInsumo.encherEstoqueDeInsumo();
+    }
     
 }

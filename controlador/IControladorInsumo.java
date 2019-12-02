@@ -9,5 +9,6 @@ public interface IControladorInsumo {
     void removerInsumo(String nome, int quantidade) throws InsumoException;
     void removerInsumo(String nome) throws InsumoException;
     void atualizarInsumo(Insumo insumo) throws InsumoException;
+    void encherEstoqueDeInsumo();
     int getTamanho();
 }
