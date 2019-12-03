@@ -72,4 +72,9 @@ public class ControladorCozinheiro implements IControladorCozinheiro {
     public int getTamanho() {
         return repositorioCozinheiro.getTamanho();
     }
+
+    @Override
+    public Cozinheiro getCozinheiroLivre() throws CozinheiroException {
+        return repositorioCozinheiro.getCozinheiroLivre();
+    }
 }

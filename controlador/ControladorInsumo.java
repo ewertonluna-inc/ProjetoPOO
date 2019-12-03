@@ -86,4 +86,16 @@ public class ControladorInsumo implements IControladorInsumo {
         repositorioInsumo.encherEstoque();
     }
 
+    @Override
+    public int getQuantidadeDeInsumo(String nome) throws InsumoException {
+        if (nome == null || nome.isEmpty()) {
+            throw new InsumoException("'nome' não pode ser null ou string vazia");
+        }
+        if (repositorioInsumo.indexDoInsumo(nome) == -1) {
+            throw new InsumoException("Não há insumo (" + nome + ") cadastrado");
+        }
+
+        return repositorioInsumo.getQuantidadeDeInsumo(nome);
+    }
+
 }

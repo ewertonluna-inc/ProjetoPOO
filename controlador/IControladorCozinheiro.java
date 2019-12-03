@@ -8,5 +8,6 @@ public interface IControladorCozinheiro {
     Cozinheiro procurarCozinheiro(String cpf) throws CozinheiroException;
     void removerCozinheiro(String cpf) throws CozinheiroException;
     void atualizarCozinheiro(Cozinheiro cozinheiro) throws CozinheiroException;
+    Cozinheiro getCozinheiroLivre() throws CozinheiroException;
     int getTamanho();
 }

@@ -179,5 +179,15 @@ public class Fachada implements IControladorBalconista, IControladorCliente, ICo
     public void encherEstoqueDeInsumo() {
         controladorInsumo.encherEstoqueDeInsumo();
     }
+
+    @Override
+    public int getQuantidadeDeInsumo(String nome) throws InsumoException {
+        return controladorInsumo.getQuantidadeDeInsumo(nome);
+    }
+
+    @Override
+    public Cozinheiro getCozinheiroLivre() throws CozinheiroException {
+        return controladorCozinheiro.getCozinheiroLivre();
+    }
     
 }
