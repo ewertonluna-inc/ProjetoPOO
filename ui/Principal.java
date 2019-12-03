@@ -56,8 +56,8 @@ public class Principal {
                 UIBalconista uiBalconista = new UIBalconista();
                 uiBalconista.showMenu();
             } else if (opcao.equals("8")) {
-                // UICozinheiro uiCozinheiro = new UICozinheiro();
-                // uiCozinheiro.showMenu();
+                UICozinheiro uiCozinheiro = new UICozinheiro();
+                uiCozinheiro.showMenu();
             } else if (opcao.equals("9")) {
                 UIGerente uiGerente = new UIGerente();
                 uiGerente.showMenu();
