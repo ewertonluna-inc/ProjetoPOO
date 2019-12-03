@@ -53,8 +53,8 @@ public class Principal {
                 UICadastroInsumo uiCadastroInsumo = new UICadastroInsumo();
                 uiCadastroInsumo.showMenu();
             } else if (opcao.equals("7")) {
-                // UIBalconista uiBalconista = new UIBalconista();
-                // uiBalconista.showMenu();
+                UIBalconista uiBalconista = new UIBalconista();
+                uiBalconista.showMenu();
             } else if (opcao.equals("8")) {
                 // UICozinheiro uiCozinheiro = new UICozinheiro();
                 // uiCozinheiro.showMenu();
