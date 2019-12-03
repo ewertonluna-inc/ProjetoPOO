@@ -43,9 +43,9 @@ O sistema, além de desempenhar cadastros com as funções CRUD, também realiza
     - O sistema busca pelo primeiro gerente que está livre para receber a solicitação. Para que possa ser enviado uma solicitação para um gerente, é necessário que exista gerente cadastrado e que ele não tenha solicitação no momento ou, se tiver, que ela já esteja concluída. Caso o gerente tenha solicitação que ainda está em aberto, a solicitação não pode ser enviada para ele.
 - **_Menu Cozinheiro_**
     - Possui opções de ver o pedido atual e dar baixa no pedido. 
-    - Ao ver o pedido atual, o cozinheiro recebe todas as informações do pedido, com os ingredientes, entre outros, e o status do pedido (se está concluído ou não).
+    - Ao ver o pedido atual (caso haja algum), o cozinheiro recebe todas as informações do pedido, com os ingredientes, entre outros, e o status do pedido (se está concluído ou não).
     - Ao dar baixa no pedido, o status do pedido é alterado para concluído e o cozinheiro passa a ser elegível para receber outros pedidos.
 - **_Menu Gerente_**
     - Possui opções de ver solicitação atual e dar baixa na solicitação.
-    - Ao ver a solicitação, o gerente recebe a mensagem enviada pelo balconista que contém a descrição da solicitação. Além disso, também é mostrado o status da solicitação (se está resolvida ou não).
+    - Ao ver a solicitação (caso haja alguma), o gerente recebe a mensagem enviada pelo balconista que contém a descrição da solicitação. Além disso, também é mostrado o status da solicitação (se está resolvida ou não).
     - Ao dar baixa na solicitação, o status da solicitação é alterado para resolvido e o gerente passa a ser elegível para receber outras solicitações.
