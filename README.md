@@ -5,6 +5,7 @@ O presente projeto busca simular um pequeno sistema de uma lanchonete onde o qua
 - Balconistas
 - Cozinheiros 
 - Gerentes
+
 O menu principal dá as opções de cadastros dos funcionários e também de clientes, insumos e pedidos.
 
 O sistema, além de desempenhar cadastros com as funções CRUD, também realiza tarefas de
