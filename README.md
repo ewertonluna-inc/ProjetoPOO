@@ -32,9 +32,9 @@ O sistema, além de desempenhar cadastros com as funções CRUD, também realiza
         - 100 unidades de pão.
         - 100 porções de bacon.
         - 100 unidades de carne.
-        
+
     Esta opção é bastante útil para renovar o estoque de uma só vez.
-    - A opção "remover insumo" pede o nome do insumo a ser removido e uma quantidade. Se a quantidade a ser removida for igual a quantidade que há no estoque, o registro do insumo permanece no cadastro e o campo 'quantidade' do insumo será zero. No entanto, se a quantidade a ser removida for maior do que a quantidade existente de insumo, o registro do insumo é retirado do cadastro. Não haverá mais o respectivo objeto insumo na lista de insumos cadastrados.
+    - A opção "remover insumo" pede o nome do insumo a ser removido e uma quantidade. Se a quantidade a ser removida for igual a quantidade que há no estoque, o registro do insumo permanece no cadastro e o campo 'quantidade' do insumo será zero. No entanto, se a quantidade a ser removida for maior do que a quantidade existente de insumo, o registro do insumo é retirado do cadastro. Dessa forma, não haverá mais o respectivo objeto insumo na lista de insumos cadastrados.
 
 ### Menus dos funcionários
 - **_Menu Balconista_**
