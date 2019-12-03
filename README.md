@@ -13,5 +13,6 @@ O sistema, além de desempenhar cadastros com as funções CRUD, também realiza
 - Abrir Solicitação: cria uma solicitação que é enviada para um gerente. O gerente tem o encargo de, quando resolver a solicitação, dar entrada no sistema. **(A CONCLUIR)**
 
 OBSERVAÇÕES: 
-- Todos os repositórios, controladores, modelos, exceções e menu principal estão prontos e funcionais.
-- Falta concluir: as UIs para cada caso.
+- Todos os repositórios, controladores, modelos, exceções e menu principal e menus de cadastros estão prontos e funcionais.
+- Falta concluir: as duas tarefas destacadas acima.
+
