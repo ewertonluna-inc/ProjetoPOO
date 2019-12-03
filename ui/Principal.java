@@ -59,8 +59,8 @@ public class Principal {
                 // UICozinheiro uiCozinheiro = new UICozinheiro();
                 // uiCozinheiro.showMenu();
             } else if (opcao.equals("9")) {
-                // UIGerente uiGerente = new UIGerente();
-                // uiGerente.showMenu();
+                UIGerente uiGerente = new UIGerente();
+                uiGerente.showMenu();
             }
         }
     }
