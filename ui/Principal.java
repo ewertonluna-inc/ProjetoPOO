@@ -22,7 +22,7 @@ public class Principal {
             System.out.println("3 - Cadastro de Gerente");
             System.out.println("4 - Cadastro de Cliente");
             System.out.println("5 - Cadastro de Pedido");
-            System.out.println("6 - Cadastro de Insumos");
+            System.out.println("6 - Cadastro de Insumo");
             System.out.println("7 - Menu Balconista");
             System.out.println("8 - Menu Cozinheiro");
             System.out.println("9 - Menu Gerente");

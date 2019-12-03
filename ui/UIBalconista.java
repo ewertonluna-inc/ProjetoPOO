@@ -145,9 +145,9 @@ public class UIBalconista implements IMenu {
         }
 
         // Se existem as quantidades solicitadas em estoque, realiza o pedido
-        if (qtdAlface < qtdAlfaceEstoque && qtdCarne < qtdCarneEstoque &&
-                qtdQueijo < qtdQueijoEstoque && qtdTomate < qtdTomateEstoque &&
-                qtdBacon < qtdBaconEstoque && qtdPao < qtdPaoEstoque) {
+        if (qtdAlface <= qtdAlfaceEstoque && qtdCarne <= qtdCarneEstoque &&
+                qtdQueijo <= qtdQueijoEstoque && qtdTomate <= qtdTomateEstoque &&
+                qtdBacon <= qtdBaconEstoque && qtdPao <= qtdPaoEstoque) {
             
             Insumo carne = new Insumo("carne", Estoque.CARNE.getCaloriasIndividual(), Estoque.CARNE.getPrecoIndividual(), qtdCarne);
             Insumo queijo = new Insumo("queijo", Estoque.QUEIJO.getCaloriasIndividual(), Estoque.QUEIJO.getPrecoIndividual(), qtdQueijo);

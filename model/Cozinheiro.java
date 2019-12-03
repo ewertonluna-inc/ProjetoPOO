@@ -19,6 +19,9 @@ public class Cozinheiro extends Funcionario {
         if (pedido == null) {
             throw new CozinheiroException("Pedido não pode ser null");
         }
+        if (pedido.isPronto() == false) {
+            throw new CozinheiroException("Cozinheiro já está com pedido que ainda não foi concluído");
+        }
         pedidoAtual = pedido;
     }
 
