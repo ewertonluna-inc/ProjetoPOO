@@ -47,8 +47,8 @@ public class Principal {
                 UICadastroCliente uiCadastroCliente = new UICadastroCliente();
                 uiCadastroCliente.showMenu();
             } else if (opcao.equals("5")) {
-                // UICadastroPedido uiCadastroPedido = new UICadastroPedido();
-                // uiCadastroPedido.showMenu();
+                UICadastroPedido uiCadastroPedido = new UICadastroPedido();
+                uiCadastroPedido.showMenu();
             } else if (opcao.equals("6")) {
                 UICadastroInsumo uiCadastroInsumo = new UICadastroInsumo();
                 uiCadastroInsumo.showMenu();
