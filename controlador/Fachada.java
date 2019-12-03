@@ -189,5 +189,10 @@ public class Fachada implements IControladorBalconista, IControladorCliente, ICo
     public Cozinheiro getCozinheiroLivre() throws CozinheiroException {
         return controladorCozinheiro.getCozinheiroLivre();
     }
+
+    @Override
+    public Gerente getGerenteLivre() throws GerenteException {
+        return controladorGerente.getGerenteLivre();
+    }
     
 }

@@ -8,5 +8,6 @@ public interface IControladorGerente {
     Gerente procurarGerente(String cpf) throws GerenteException;
     void removerGerente(String cpf) throws GerenteException;
     void atualizarGerente(Gerente gerente) throws GerenteException;
+    Gerente getGerenteLivre() throws GerenteException;
     int getTamanho();
 }

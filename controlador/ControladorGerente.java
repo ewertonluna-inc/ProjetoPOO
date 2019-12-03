@@ -72,5 +72,10 @@ public class ControladorGerente implements IControladorGerente {
 	public int getTamanho() {
 		return repositorioGerente.getTamanho();
 	}
+
+    @Override
+    public Gerente getGerenteLivre() throws GerenteException {
+        return repositorioGerente.getGerenteLivre();
+    }
     
 }
