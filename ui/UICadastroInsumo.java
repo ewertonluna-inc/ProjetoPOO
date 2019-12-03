@@ -204,10 +204,12 @@ public class UICadastroInsumo implements IMenu{
         System.out.println(
             "Ao usar essa opção, quaisquer cadastros anteriores são apagados e o estoque\n" +
             "será renovado com:\n" +
-            "100 unidades de Tomate\n" +
-            "100 unidades de Alface\n" +
-            "100 unidades de Carne\n" +
-            "100 unidades de Pão\n"
+            "100 porções de Tomate\n" +
+            "100 porções de Alface\n" +
+            "100 porções de Carne\n" +
+            "100 unidades de Pão\n" +
+            "100 fatias de queijo\n" +
+            "100 porções de Bacon\n"
         );
 
         System.out.println("Você deseja continuar com essa ação? Se sim, digite 's'.");

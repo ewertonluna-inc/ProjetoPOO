@@ -121,5 +121,7 @@ public class RepositorioInsumo implements IRepositorioInsumo {
         listaDeInsumos.add(Estoque.createAlface());
         listaDeInsumos.add(Estoque.createCarne());
         listaDeInsumos.add(Estoque.createPao());
+        listaDeInsumos.add(Estoque.createQueijo());
+        listaDeInsumos.add(Estoque.createBacon());
     }
 }
