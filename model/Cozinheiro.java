@@ -19,7 +19,7 @@ public class Cozinheiro extends Funcionario {
         if (pedido == null) {
             throw new CozinheiroException("Pedido não pode ser null");
         }
-        if (pedido.isPronto() == false) {
+        if (pedidoAtual != null && pedidoAtual.isPronto() == false) {
             throw new CozinheiroException("Cozinheiro já está com pedido que ainda não foi concluído");
         }
         pedidoAtual = pedido;
@@ -39,6 +39,6 @@ public class Cozinheiro extends Funcionario {
     @Override
     public String toString() {
         return "Funcionario [nome = " + getNome() + ", cpf=" + getCpf() + ", empresa=" + getEmpresa() +  ", tempoDeExperiencia=" + getTempoDeExperiencia() 
-            + ", salario=" + getSalario() + "Pedido atual=" + getPedidoAtual() + "]";
+            + ", salario=" + getSalario() + " Pedido atual=" + getPedidoAtual() + "]";
     }
 }

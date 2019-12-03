@@ -201,7 +201,7 @@ public class UIBalconista implements IMenu {
             try {
                 Fachada.getInstancia().inserirPedido(pedido);
             } catch (PedidoException e) {
-                System.out.println("Pedido não foi inserido ao estoque: " + e.getMessage());
+                System.out.println("Pedido foi feito mas não foi inserido ao registro: " + e.getMessage());
                 System.out.println();
             }
             
