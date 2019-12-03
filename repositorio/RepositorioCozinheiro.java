@@ -85,5 +85,23 @@ public class RepositorioCozinheiro implements IRepositorioCozinheiro {
         }
         System.out.println("--------------");
     }
+
+    @Override
+    public Cozinheiro getCozinheiroLivre() throws CozinheiroException {
+        if (listaDeCozinheiros.size() == 0) {
+            throw new CozinheiroException("Lista de cozinheiro está vazia");
+        }
+
+        for (Cozinheiro cozinheiro : listaDeCozinheiros) {
+            if (cozinheiro != null && cozinheiro.getPedidoAtual() == null) {
+                return cozinheiro;
+            }
+            if (cozinheiro != null && cozinheiro.getPedidoAtual().isPronto()) {
+                return cozinheiro;
+            }
+        }
+        
+        return null;
+    }
     
 }

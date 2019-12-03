@@ -8,6 +8,7 @@ public interface IRepositorioCozinheiro {
     Cozinheiro procurarCozinheiro(String cpf);
     void removerCozinheiro(String cpf) throws CozinheiroException;
     void atualizarCozinheiro(Cozinheiro cozinheiro) throws CozinheiroException;
+    Cozinheiro getCozinheiroLivre() throws CozinheiroException;
     int indexDoCozinheiro(String cpf);
     int getTamanho();
 }

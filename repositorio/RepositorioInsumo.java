@@ -124,4 +124,14 @@ public class RepositorioInsumo implements IRepositorioInsumo {
         listaDeInsumos.add(Estoque.createQueijo());
         listaDeInsumos.add(Estoque.createBacon());
     }
+
+    @Override
+    public int getQuantidadeDeInsumo(String nome) throws InsumoException {
+        Insumo insumo = procurarInsumo(nome);
+        
+        if (insumo == null) {
+            throw new InsumoException("Não há mais esse insumo (" + nome + ")");
+        }
+        return insumo.getQuantidade();
+    }
 }
