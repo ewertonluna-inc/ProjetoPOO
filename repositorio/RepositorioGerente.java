@@ -85,5 +85,23 @@ public class RepositorioGerente implements IRepositorioGerente {
         }
         System.out.println("--------------");
     }
+
+    @Override
+    public Gerente getGerenteLivre() throws GerenteException {
+        if (listaDeGerentes.size() == 0) {
+            throw new GerenteException("Lista de gerentes está vazia");
+        }
+        
+        for (Gerente gerente : listaDeGerentes) {
+            if (gerente != null && gerente.getSolicitacao() == null) {
+                return gerente;
+            }
+            if (gerente != null && gerente.getSolicitacao().isResolvida()) {
+                return gerente;
+            }
+        }
+
+        return null;
+    }
     
 }
