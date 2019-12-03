@@ -4,14 +4,17 @@ import java.util.Scanner;
 
 import controlador.Fachada;
 import exception.CozinheiroException;
+import exception.GerenteException;
 import exception.InsumoException;
 import exception.LancheException;
 import exception.PedidoException;
 import model.Cliente;
 import model.Cozinheiro;
+import model.Gerente;
 import model.Insumo;
 import model.Lanche;
 import model.Pedido;
+import model.Solicitacao;
 import util.Estoque;
 
 public class UIBalconista implements IMenu {
@@ -50,7 +53,19 @@ public class UIBalconista implements IMenu {
                 }
 
             } else if (opcao.equals("2")) {
-                enviarSolicitacao();
+                // Chama o método enviarSolicitação se houver gerente disponível.
+                try {
+                    Gerente gerente = Fachada.getInstancia().getGerenteLivre();
+                    if (gerente != null) {
+                        enviarSolicitacao(gerente);
+                    } else {
+                        System.out.println("Não há Gerente livre no momento");
+                        System.out.println();
+                    }
+                } catch (GerenteException e) {
+                    System.out.println("Problema ao buscar gerente livre: " + e.getMessage());
+                    System.out.println();
+                }
             }
         }
 
@@ -202,7 +217,23 @@ public class UIBalconista implements IMenu {
 
     }
 
-    private void enviarSolicitacao() {
+    private void enviarSolicitacao(Gerente gerente) {
+        Solicitacao solicitacao;
+        String mensagem;
+        
+        System.out.print("Digite a solicitação: ");
+        mensagem = scanner.nextLine();
+        
+        solicitacao = new Solicitacao(mensagem);
+
+        try {
+            gerente.inserirSolicitacao(solicitacao);
+            System.out.println("Solicitação enviada com sucesso!");
+            System.out.println();
+        } catch (GerenteException e) {
+            System.out.println("Problema ao inserir solicitação: " + e.getMessage());
+            System.out.println();
+        }
     }
     
 }
