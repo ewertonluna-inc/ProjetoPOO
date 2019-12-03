@@ -25,21 +25,40 @@ public class Pedido {
         isPronto = true;
     }
 
+    public boolean isPronto(){
+        return isPronto;
+    }
+
     public String getResumoDoPedido() {
         String resumo = "";
         String nomeCliente = cliente.getNome();
         String nomeLanche = lanche.getNome();;
-
+        resumo += "====== RESUMO DO PEDIDO ======\n";
         resumo += "Nome do cliente: " + nomeCliente + "\n";
         resumo += "Lanche: " + nomeLanche + "\n";
+        resumo += "** Insumos ** \n";
+
+        for (Insumo insumo : getLanche().getInsumos()) {
+            resumo += "--" + insumo.getNome().toUpperCase() + "\n";
+            resumo += "Qtd: " + insumo.getQuantidade() + "\n";
+            resumo += "Preço Individual: " + insumo.getPrecoIndividual() + "; ";
+            resumo += "Total(R$): " + insumo.getQuantidade() + " x " + insumo.getPrecoIndividual();
+            resumo += " = " + insumo.getPrecoTotal() + "\n";
+        }
+        resumo += "\n";
+        resumo += "Se pedido é para viagem: + R$ 2,00\n";
         resumo += "Para viagem: " + paraViagem + "\n";
-        resumo += "Total a pagar: " + preco + "\n";
+        resumo += "TOTAL A PAGAR: " + preco + "\n";
         
         return resumo;
     }
 
     public String getId() {
         return id;
+    }
+
+    public Lanche getLanche() {
+        return lanche;
     }
 
     @Override

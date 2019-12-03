@@ -48,7 +48,7 @@ public class Lanche {
             throw new LancheException("null não é um argumento válido");
         }
         // Quando adiciona-se um insumo, é necessário que sua quantidade seja, no mínimo, 1.
-        if (insumo.getQuantidade() < 1) {
+        if (insumo.getQuantidade() < 0) {
             throw new LancheException("Quantidade do insumo adicionado tem que ser igual ou maior que 1");
         }
         // Se a lista de insumos estiver vazia, adiciona Insumo a lista
