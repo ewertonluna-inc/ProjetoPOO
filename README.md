@@ -22,7 +22,7 @@ O sistema, além de desempenhar cadastros com as funções CRUD, também realiza
 - **_Cadastro de Cliente_**
     - Realiza as operações de inserir, remover, procurar e atualizar cliente.
 - **_Cadastro de Pedido_**
-    - Realiza as operações de procurar e remover pedido. Este menu serve como um histórico dos pedidos que vão sendo feito, por isso, não há a opção de inserir pedido diretamente deste menu. Os pedidos são inseridos a medida que o balconista cria um pedido para o cliente. Serve para consulta dos pedidos que já foram feitos.
+    - Realiza as operações de procurar e remover pedido. Este menu serve como um histórico dos pedidos que vão sendo feitos, por isso, não há a opção de inserir pedido diretamente deste menu. Os pedidos são inseridos a medida que o balconista cria um pedido para o cliente. Serve para consulta dos pedidos que já foram feitos.
 - **_Cadastro de Insumo_**
     - Realiza as operações de inserir, remover, procurar e atualizar insumo. Este menu também é útil para se ter o controle do que existe no estoque da loja, pois, quando o balconista cria um pedido para o cliente, os insumos utilizados no lanche são retirados do estoque. Os pedidos só são concluídos se houver estoque de insumo suficiente para que o lanche seja feito.
     - Existe uma opção "Encher estoque". Nesta opção, tudo que há de registro de insumo é removido e ele é renovado com 100 unidades de cada insumo para hamburgueres: 
