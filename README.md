@@ -1,4 +1,4 @@
-# Projeto de Programação Orientada a Objeto - UniFBV - 2o Período
+# Projeto de Programação Orientada a Objeto
 ## Sistema de Lanchonete
 
 O presente projeto busca simular um pequeno sistema de uma lanchonete onde o quadro de funcionários consiste em:
